@@ -24,11 +24,6 @@ body {
     max-width: 1000px;
 }
 
-.wrapper:hover .meme-icon {
-    height: 0.9em;
-    width: 0.9em;
-}
-
 h1 {
     font-size: 1.1em;
     margin-left: 1vw;
@@ -42,23 +37,6 @@ h1 {
     justify-content: center;
     padding: 1vw;
     cursor: pointer;
-}
-
-.meme:hover .meme-image {
-    display: flex;
-    visibility: visible;
-    width: 70%;
-    height: auto;
-    justify-self: center;
-    align-self: center;
-    cursor: pointer;
-    transition-duration: 0.7s;
-}
-
-.meme:hover .meme-icon {
-    content: url('assets/images/down.svg');
-    height: 0.9em;
-    width: 0.9em;
 }
 
 label {
@@ -87,7 +65,7 @@ label {
     width: 0;
 }
 
-.meme-radio:checked+.meme-image {
+.meme-radio:checked~.meme-image {
     display: flex;
     visibility: visible;
     width: 70%;
@@ -97,7 +75,7 @@ label {
     transition-duration: 0.7s;
 }
 
-.meme-radio:checked~label .meme-icon {
+.meme-radio:checked~.meme-icon {
     content: url('assets/images/down.svg');
     height: 0.9em;
     width: 0.9em;
@@ -113,6 +91,30 @@ label {
     height: 0;
     width: 0;
     transition-duration: 0.7s;
+}
+
+@media (hover: hover) {
+    .wrapper:hover .meme-icon {
+        height: 0.9em;
+        width: 0.9em;
+    }
+
+    .meme:hover .meme-image {
+        display: flex;
+        visibility: visible;
+        width: 70%;
+        height: auto;
+        justify-self: center;
+        align-self: center;
+        cursor: pointer;
+        transition-duration: 0.7s;
+    }
+
+    .meme:hover .meme-icon {
+        content: url('assets/images/down.svg');
+        height: 0.9em;
+        width: 0.9em;
+    }
 }
 
 @media only screen and (max-width: 500px) {
