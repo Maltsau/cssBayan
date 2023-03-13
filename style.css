@@ -1,0 +1,154 @@
+*,
+*before,
+*after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 3vw;
+    background-color: #F5F5DC;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+h1 {
+    font-size: 1.1em;
+    margin-left: 1vw;
+}
+
+.meme {
+    border-top: 1px #DCDCDC solid;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1vw;
+    cursor: pointer;
+}
+
+label {
+    font-size: 1em;
+    margin: 5px 0 5px 3%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    cursor: pointer;
+    align-items: center;
+}
+
+.meme-paragraph {
+    margin: 1vw 0;
+}
+
+.meme-icon {
+    content: url('assets/images/Right.svg');
+    height: 0;
+    width: 0;
+    transition-duration: 0.7s;
+}
+
+.meme-radio {
+    height: 0;
+    width: 0;
+}
+
+.meme-radio:checked~.meme-image {
+    display: flex;
+    visibility: visible;
+    width: 70%;
+    height: auto;
+    justify-self: center;
+    align-self: center;
+    transition-duration: 0.7s;
+}
+
+.meme-radio:checked~.meme-icon {
+    content: url('assets/images/down.svg');
+    height: 0.9em;
+    width: 0.9em;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.meme-image {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    transition-duration: 0.7s;
+}
+
+@media (hover: hover) {
+    .wrapper:hover .meme-icon {
+        height: 0.9em;
+        width: 0.9em;
+    }
+
+    .meme:hover .meme-image {
+        display: flex;
+        visibility: visible;
+        width: 70%;
+        height: auto;
+        justify-self: center;
+        align-self: center;
+        cursor: pointer;
+        transition-duration: 0.7s;
+    }
+
+    .meme:hover .meme-icon {
+        content: url('assets/images/down.svg');
+        height: 0.9em;
+        width: 0.9em;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    h1 {
+        font-size: 16px;
+    }
+
+    .meme-paragraph {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 820px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    .meme-paragraph {
+        font-size: 20px;
+        margin: 5px 0;
+    }
+
+    label {
+        margin: 0 0 0 3%;
+    }
+
+    .wrapper:hover .meme-icon {
+        height: 20px;
+        width: 20px;
+    }
+
+    .meme:hover .meme-icon {
+        content: url('assets/images/down.svg');
+        height: 20px;
+        width: 20px;
+    }
+}
